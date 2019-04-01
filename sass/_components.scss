@@ -19,7 +19,7 @@
         font-size: inherit;
         color: inherit;
         background-color: var(--color-grey-light-2);
-        border:none;
+        border: none;
         padding: .7rem 2rem;
         border-radius: 100px;
         width: 90%;
@@ -40,11 +40,11 @@
 
     }
 
-    &__input:focus + &__button {
+    &__input:focus+&__button {
         background-color: var(--color-grey-light-3);
     }
 
- 
+
 
     &__button {
         border: none;
@@ -54,7 +54,7 @@
             outline: none;
         }
 
-       
+
 
         &:active {
             transform: translateY(.2rem)
@@ -64,21 +64,21 @@
     }
 
     &__icon {
-       height: 2rem;
-       width: 2rem; 
-       fill:var(--color-grey-dark-3)
+        height: 2rem;
+        width: 2rem;
+        fill: var(--color-grey-dark-3)
     }
 }
 
 ///////////////////
 // USER NAVIGATION
 
-.user-nav{
+.user-nav {
     align-self: stretch;
     display: flex;
     align-items: center;
 
-    & > * {
+    &>* {
         padding: 0 2rem;
         cursor: pointer;
         height: 100%;
@@ -87,13 +87,13 @@
 
     }
 
-    & > *:hover {
+    &>*:hover {
         background-color: var(--color-grey-light-2);
     }
 
     &__icon-box {
         position: relative;
-    
+
     }
 
     &__icon {
@@ -118,13 +118,13 @@
 
     }
 
-    &__user-photo{
+    &__user-photo {
         height: 3.75rem;
         border-radius: 50%;
         margin-right: 1rem;
     }
 
-   
+
 }
 
 
@@ -138,6 +138,7 @@
 
     &__item {
         position: relative;
+
         &::not(:last-child) {
             margin-bottom: .5rem;
         }
@@ -147,23 +148,21 @@
     &__item:before {
         content: "";
         position: absolute;
-        top:0;
+        top: 0;
         left: 0;
-        height : 100%;
+        height: 100%;
         width: 3px;
         background-color: var(--color-primary);
         transform: scaleY(0);
         transition: transform .2s,
-                    width .4s cubic-bezier(1,0,0,1) .2s,
-                    background-color .1s
-        ;
+            width .4s cubic-bezier(1, 0, 0, 1) .2s,
+            background-color .1s;
     }
 
     &__item:hover::before,
-    &__item--active::before
-    {
-       transform: scaleY(1);
-       width: 100%;
+    &__item--active::before {
+        transform: scaleY(1);
+        width: 100%;
     }
 
     &__item:active::before {
@@ -172,7 +171,7 @@
 
     &__link:link,
 
-    &__link:visited{
+    &__link:visited {
         color: var(--color-grey-light-1);
         text-decoration: none;
         text-transform: uppercase;
@@ -188,17 +187,17 @@
     }
 
     &__icon {
-       width: 1.75rem;
-       height: 1.75rem; 
-       margin-right: 2rem;
-       fill: currentColor;
+        width: 1.75rem;
+        height: 1.75rem;
+        margin-right: 2rem;
+        fill: currentColor;
     }
 }
 
 ///////////////////
 // LEGAL TEXT
 
-.legal{
+.legal {
     font-size: 1.2rem;
     text-align: center;
     padding: 1.2rem;
@@ -209,6 +208,7 @@
 // GALLERY
 .gallery {
     display: flex;
+
     &__photo {
         width: 100%;
         display: block;
@@ -220,36 +220,127 @@
 
 .overview {
     display: flex;
-    // justify-content: space-between;
-    &__heading{
+    align-items: center;
+    border-bottom: 1px solid var(--color-grey-light-2);
 
+
+    // justify-content: space-between;
+    &__heading {
+        font-size: 2.25rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 1.5rem 3rem;
     }
 
-    &__stars{
-        flex:1
+    &__stars {
+        display: flex;
+        margin-right: auto;
     }
 
     &__icon-star,
-    &__icon-location
-    {
+    &__icon-location {
         width: 1.75rem;
         height: 1.75rem;
-        fill:var(--color-primary);
+        fill: var(--color-primary);
     }
 
     &__location {
+        font-size: 1.2rem;
+        display: flex;
+        vertical-align: center;
 
+    }
+
+    &__icon-location {
+        margin-right: .5rem;
     }
 
     &__rating {
+        background-color: var(--color-primary);
+        margin-left: 3rem;
+        color: white;
+        padding: 0 2.25rem;
+        align-self: stretch;
 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     &__rating-average {
+        font-size: 2.25rem;
+        font-weight: 300;
+        margin-bottom: -3px;
 
     }
 
     &__rating-count {
+        font-size: .8rem;
+        text-transform: uppercase;
+    }
+}
+
+///////////////////
+// BUTTON INLNE
+
+.btn-inline {
+    border: none;
+    color: var(--color-primary);
+    font-size: inherit;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+    display: inline-block;
+    background-color: transparent;
+    cursor: pointer;
+
+    transition: all .2s;
+
+    &:hover {
+        color: var(--color-grey-dark-1);
+    }
+
+    &:focus {
+        outline: none;
+        animation: pulsate 1s infinite;
 
     }
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+        box-shadow: none;
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 1rem 4rem rgba(0, 0, 0, .25);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: none;
+    }
+}
+
+.detail {
+    display: flex;
+    padding: 4.5rem;
+    background-color: var(--color-grey-light-1);
+    border-bottom: var(--line)
+}
+
+.description {
+    background-color: white;
+    box-shadow: var(--shadow-light);
+    flex: 0 0 60%;
+    margin-right: 4.5rem;
+    padding: 3rem;
+}
+
+.user-reviews {
+    background-color: yellowgreen;
+    flex: 1;
 }
